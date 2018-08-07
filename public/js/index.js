@@ -4,13 +4,8 @@ socket.on('connect', function(){
   console.log('Connected to the server');
 });
 
-socket.emit('createMessage', {
-  'to': 'khalid@email.com',
-  'text': 'Just do it'
-});
-
 socket.on('newMessage', function(message){
-  console.log('new message:', message);
+  console.log('newMessage', message);
 });
 
 socket.on('disconnect', function(){
