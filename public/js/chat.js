@@ -45,7 +45,6 @@ jQuery('#message-form').on('submit', function(e){
   var messageButton = jQuery('#send-message');
 
   socket.emit('createMessage', {
-    from: 'User',
     text: jQuery('[name=message]').val()
   }, function(){
     // messageButton.attr('disabled', 'disabled');
