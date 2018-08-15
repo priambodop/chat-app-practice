@@ -19,10 +19,14 @@ socket.on('disconnect', function(){
 jQuery('#message-form').on('submit', function(e){
   e.preventDefault();
 
+  var messageTextbox = jQuery('[name=message]');
+  var messageButton = jQuery('#send-message');
+
   socket.emit('createMessage', {
     from: 'User',
     text: jQuery('[name=message]').val()
-  }, function(data){
-    console.log(data);
+  }, function(){
+    // messageButton.attr('disabled', 'disabled');
+    messageTextbox.val('');
   });
 });
